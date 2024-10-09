@@ -20,7 +20,7 @@ layout:
 
 # Welcome
 
-Here is the documentation to integrate the XFlow, an API and an SDK to:
+Here is the documentation to integrate the XFlow, an API and an SDK for Non custodial wallet and on-ramp/off-ramp partner to:
 
 * Share user KYC datas between Wallets and On-ramp Partners
 * Buy or Sell Crypto from Fiat between Wallets and On-ramp Partners
