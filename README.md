@@ -1,7 +1,6 @@
 ---
 icon: hand-wave
-cover: >-
-  https://images.unsplash.com/photo-1594904351111-a072f80b1a71?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwyfHxhcGklMjB8ZW58MHx8fHwxNzI4NDkwNzYyfDA&ixlib=rb-4.0.3&q=85
+cover: .gitbook/assets/Desktop - 1 (1).png
 coverY: 0
 layout:
   cover:
