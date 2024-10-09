@@ -144,7 +144,7 @@ For On ramp:
 
 ```javascript
 await client.completeOnRampOrder({
-    orderId: order.orderId,
+    externalId: 'YOUR_ORDER_ID',
     transactionId: 'TRANSACTION_ID',
 });
 ```
@@ -153,6 +153,6 @@ For off ramp:
 
 ```javascript
 await client.completeOffRampOrder({
-    orderId: order.orderId,
+    externalId: 'YOUR_ORDER_ID',
 });
 ```
