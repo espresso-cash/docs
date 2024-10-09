@@ -4,8 +4,8 @@
 
 ## FOR ON-RAMP PARTNER
 
-* [Quickstart](getting-started/quickstart.md)
+* [Getting started](getting-started/quickstart.md)
 
 ## FOR WALLET
 
-* [Editor](basics/editor.md)
+* [Getting started](basics/editor.md)
