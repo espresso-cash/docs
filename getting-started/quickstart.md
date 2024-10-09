@@ -128,6 +128,12 @@ export async function webhookHandler(body) {
 }
 ```
 
+#### Once your webhook is up and running
+
+you can test that it is working properly by simulating a user order here
+
+[https://espresso-cash.github.io/xflow-user-test-app/#/simple](https://espresso-cash.github.io/xflow-user-test-app/#/simple)
+
 ### 3. Add a line of code in your system to update the status
 
 Once the order has been accepted, you should be able to tell Xflow when the money has been sent with this command for&#x20;
