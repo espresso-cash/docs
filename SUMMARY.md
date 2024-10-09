@@ -4,7 +4,7 @@
 
 ## FOR ON-RAMP PARTNER
 
-* [Getting started](getting-started/quickstart.md)
+* [Start accepting on-ramp orders](getting-started/quickstart.md)
 
 ## FOR WALLET
 
