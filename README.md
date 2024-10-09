@@ -1,6 +1,6 @@
 ---
 icon: hand-wave
-cover: .gitbook/assets/Desktop - 1 (1).png
+cover: .gitbook/assets/Android-Blog.png
 coverY: 0
 layout:
   cover:
