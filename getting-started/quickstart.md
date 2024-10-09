@@ -132,6 +132,8 @@ export async function webhookHandler(body) {
 
 you can test that it is working properly by simulating a user order here
 
+In the partner key, you can input the public key for testnet: F2etcaJ1HbPVjjKfp4WaZFF1DoQRNUETkXyM1b98u76C
+
 [https://espresso-cash.github.io/xflow-user-test-app/#/simple](https://espresso-cash.github.io/xflow-user-test-app/#/simple)
 
 ### 3. Add a line of code in your system to update the status
