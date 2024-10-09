@@ -31,7 +31,7 @@ Second, you need a write a cloud function for the webhook below. You can clone t
 \
 or copy the main function and adapt to your need. Make sure to edit the logic in the comment section
 
-```
+```javascript
 import { XFlowPartnerClient } from "xflow-partner-client";
 import nacl from "tweetnacl";
 import base58 from "bs58";
@@ -134,7 +134,7 @@ Once the order has been accepted, you should be able to tell Xflow when the mone
 
 For On ramp:
 
-```
+```javascript
 await client.completeOnRampOrder({
     orderId: order.orderId,
     transactionId: 'TRANSACTION_ID',
@@ -143,7 +143,7 @@ await client.completeOnRampOrder({
 
 For off ramp:
 
-```
+```javascript
 await client.completeOffRampOrder({
     orderId: order.orderId,
 });
