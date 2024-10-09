@@ -48,7 +48,7 @@ export async function webhookHandler(body) {
     const client = await XFlowPartnerClient.fromSeed(seed);
 
     const orderId = body.orderId;
-    const order = await client.getOrder(orderId);
+    const order = await client.getOrder({orderId: orderId});
 
     const userPK = order.userPublicKey;
 
