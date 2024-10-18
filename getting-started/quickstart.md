@@ -8,28 +8,26 @@ description: >-
 # Start accepting on-ramp orders
 
 1. Provide to XFlow your webhook URL
-2. Create and Configure your webhook cloud function to accept an on-ramp/off-ramp order
+2. Create and Configure your webhook handler to accept an on-ramp/off-ramp order
 3. Add a line of code in your system to update the status of the order when it is completed.
 
-### 1. Provide to Xflow your webhook URL
+### Provide to XFlow your webhook URL
 
-You will need to create a cloud function in your backend. This webhook will receive incoming request from Xflow in order to accept or reject on-ramp/off-ramp order from users.
+You will need to create a webhook handler in your backend. This webhook will receive incoming request from XFlow when new order is created.
 
-Once you have a created this URL, please communicate with us on telegram the URL, so you can whitelist you on the test environnement
+Once you have a created this URL, please communicate with us on telegram the URL, so we can whitelist you on the test environement.
 
-### 2. Import our SDK and edit the logic of the webhook
+### Install Client SDK
 
-First you need to import javascript SDK by doing  (The documentation of the library can be found here [https://github.com/espresso-cash/xflow-partner-client](https://github.com/espresso-cash/xflow-partner-client))
+First you need to import [javascript SDK](https://github.com/espresso-cash/xflow-partner-client) by running the following command:
 
 ```
 npm install https://github.com/espresso-cash/xflow-partner-client
 ```
 
-Second, you need a write a cloud function for the webhook below. You can clone the full example below&#x20;
+### Import our SDK and edit the logic of the webhook
 
-[https://github.com/espresso-cash/xflow-partner-webhook-example](https://github.com/espresso-cash/xflow-partner-webhook-example)\
-\
-or copy the main function and adapt to your need. Make sure to edit the logic in the comment section
+Second, you need a write a cloud function for the webhook below. You can clone the full example [here](https://github.com/espresso-cash/xflow-partner-webhook-example) or copy the main function and adapt to your need. Make sure to edit the logic in the comment section.
 
 ```javascript
 import { XFlowPartnerClient } from "xflow-partner-client";
@@ -62,7 +60,7 @@ export async function webhookHandler(body) {
       userPK: userPK,
     });
 
-    // KYC should return JSON result of validation. Ie: for Nigeria, it is SmileID result
+    // KYC should return JSON result of validation, i.e. for Nigeria, it is SmileID result
     // For now, in Test Environment, we don't validate the KYC result
     // In Production, you will be able validate the KYC result and reject the order if the KYC is not valid
 
@@ -148,17 +146,11 @@ export async function webhookHandler(body) {
 }
 ```
 
-#### Once your webhook is up and running
+Once your webhook is up and running you can test that it is working properly by simulating a user order [here](https://espresso-cash.github.io/xflow-user-test-app/#/simple) (in the Partner public key, you can input the public key for test environment: `F2etcaJ1HbPVjjKfp4WaZFF1DoQRNUETkXyM1b98u76C`).
 
-you can test that it is working properly by simulating a user order here
+### Add a line of code in your system to update the status
 
-In the partner key, you can input the public key for testnet: F2etcaJ1HbPVjjKfp4WaZFF1DoQRNUETkXyM1b98u76C
-
-[https://espresso-cash.github.io/xflow-user-test-app/#/simple](https://espresso-cash.github.io/xflow-user-test-app/#/simple)
-
-### 3. Add a line of code in your system to update the status
-
-Once the order has been accepted, you should be able to tell Xflow when the money has been sent with this command for&#x20;
+Once the order has been accepted, you should be able to tell XFlow when the money has been sent with this command for
 
 For On ramp:
 
