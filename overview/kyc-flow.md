@@ -37,7 +37,7 @@ sequenceDiagram
     Note over User,Verifier: Email validation
     User->>Wallet: Enters email
     Wallet->>KYC: Sends encrypted email
-    Wallet->>KYC: Grants access to Validator on behalf of user
+    Wallet->>KYC: Grants access to Verifier on behalf of user
 
     Wallet->>Verifier: Requests email validation
     Verifier->>+KYC: Requests data
