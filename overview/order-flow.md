@@ -7,7 +7,7 @@ icon: money-bill-transfer
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Order flow overview</p></figcaption></figure>
 
 1. **User** initiates onramp or offramp in **Wallet**.
-2. **Wallet** shares access to the selected **Partner** and creates order on **XFlow Server**.
+2. **Wallet** shares access to the selected **Ramp Partner** and creates order on **XFlow Server**.
 3. **XFlow Server** notifies **Ramp Partner** about new order using webhook provided by **Ramp Partner**.
 4. **Ramp Partner** gets order details, confirms the order, and retrieves user data using [Client SDK](../getting-started/quickstart.md).
 5. **Ramp Partner** processes the order using their internal business logic.
