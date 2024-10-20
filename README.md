@@ -25,3 +25,14 @@ Here is the documentation to integrate the XFlow, an API and an SDK for wallet a
 * Share user KYC datas between Wallets and On-ramp Partners
 * Buy or Sell Crypto from Fiat between Wallets and On-ramp Partners
 
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption><p>System overview</p></figcaption></figure>
+
+Participants:
+
+* **Wallet** – non-custodial wallet connected to XFlow network for on/off-ramp with wire transfer. Connected wallets:
+  * [Espresso Cash](https://espressocash.com) (work in progress)
+* **XFlow Server** – provides storage for users to store encrypted data (e.g. ID documents) and verification info; implements API to create and track on/off-ramp orders.
+* **Verifier** – service in charge of verifying information provided by users, e.g. user with wallet `4sUAXgMvL91B4BSYfficvXjDko85gCmbTcN8QH2SSGxf` owns email `john.doe@example.com`
+* **KYC Partner** – service in charge of performing full KYC. Supported partners:
+  * SmileID
+* **Ramp Partner** – service in charge of converting Fiat to Crypto (On-Ramp service) or Crypto to Fiat (Off-Ramp service).
