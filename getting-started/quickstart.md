@@ -1,23 +1,24 @@
 ---
 icon: bullseye-arrow
-description: >-
-  To join the XFlow Network as an on-ramp/off-ramp partner you will need to do 3
-  steps:
 ---
 
 # Start accepting on-ramp orders
 
-1. Provide to XFlow your webhook URL
-2. Create and Configure your webhook handler to accept an on-ramp/off-ramp order
+To join the XFlow Network as an on-ramp/off-ramp partner you will need to do 3 steps:
+
+1. Provide to XFlow your webhook URL.
+2. Create and configure your webhook handler to accept an on-ramp/off-ramp order.
 3. Add a line of code in your system to update the status of the order when it is completed.
 
 ### Provide to XFlow your webhook URL
 
 You will need to create a webhook handler in your backend. This webhook will receive incoming request from XFlow when new order is created.
 
-Once you have a created this URL, please communicate with us on telegram the URL, so we can whitelist you on the test environement.
+Once you have a created this URL, please communicate with us on telegram the URL, so we can whitelist you on the test environment.
 
-### Install Client SDK
+### Create and configure webhook handler
+
+#### Install Client SDK
 
 First you need to import [javascript SDK](https://github.com/espresso-cash/xflow-partner-client) by running the following command:
 
@@ -25,7 +26,7 @@ First you need to import [javascript SDK](https://github.com/espresso-cash/xflow
 npm install https://github.com/espresso-cash/xflow-partner-client
 ```
 
-### Import our SDK and edit the logic of the webhook
+#### Import our SDK and edit the logic of the webhook
 
 Second, you need a write a cloud function for the webhook below. You can clone the full example [here](https://github.com/espresso-cash/xflow-partner-webhook-example) or copy the main function and adapt to your need. Make sure to edit the logic in the comment section.
 
@@ -170,7 +171,7 @@ export async function webhookHandler(body) {
 
 Once your webhook is up and running you can test that it is working properly by simulating a user order [here](https://espresso-cash.github.io/xflow-user-test-app/#/simple) (in the Partner public key, you can input the public key for test environment: `F2etcaJ1HbPVjjKfp4WaZFF1DoQRNUETkXyM1b98u76C`).
 
-### Add the code in your system to update the status
+### Update the status of the order
 
 Once the order has been accepted and processed, you should be able to tell XFlow that money has been sent.
 
