@@ -4,7 +4,7 @@ icon: money-bill-transfer
 
 # Order flow
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Order flow overview</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Order flow overview</p></figcaption></figure>
 
 1. **User** initiates onramp or offramp in **Wallet**.
 2. **Wallet** shares access to the selected **Partner** and creates order on **XFlow Server**.
