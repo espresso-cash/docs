@@ -168,16 +168,13 @@ export async function webhookHandler(body) {
 }
 ```
 
-```javascript
-```
-
 Once your webhook is up and running you can test that it is working properly by simulating a user order [here](https://espresso-cash.github.io/xflow-user-test-app/#/simple) (in the Partner public key, you can input the public key for test environment: `F2etcaJ1HbPVjjKfp4WaZFF1DoQRNUETkXyM1b98u76C`).
 
-### Add a line of code in your system to update the status
+### Add the code in your system to update the status
 
-Once the order has been accepted, you should be able to tell XFlow when the money has been sent with this command for
+Once the order has been accepted and processed, you should be able to tell XFlow that money has been sent.
 
-For On ramp:
+For on-ramp:
 
 ```javascript
 await client.completeOnRampOrder({
@@ -186,7 +183,7 @@ await client.completeOnRampOrder({
 });
 ```
 
-For off ramp:
+For off-ramp:
 
 ```javascript
 await client.completeOffRampOrder({
