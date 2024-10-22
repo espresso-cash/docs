@@ -42,7 +42,7 @@ Also, in this mode, you have full control over user data, and can independently 
 {% hint style="warning" %}
 Email and phone number are validated automatically – any data will be marked as "validated" after pressing corresponding "Validate" buttons. No real confirmation codes are sent.
 
-For document validation, SmileID test mode is used. This is mode is limited, to pass validation use the following data:
+For document validation, SmileID test mode is used. This mode is limited, to pass validation use the following data:
 
 * ID Type: `Voter ID`
 * Document number: `0000000000000000004`
