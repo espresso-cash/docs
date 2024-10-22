@@ -6,7 +6,7 @@ icon: passport
 
 Before user can create orders on the platform, they need to pass KYC.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>KYC flow overview</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>KYC flow overview</p></figcaption></figure>
 
 1. **User** initiates KYC in the compatible **Wallet**. **User** provides required data (email, phone number, document etc.)
 2. **Wallet** locally encrypts data and uploads them to **XFlow Server.**
