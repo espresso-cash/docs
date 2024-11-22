@@ -4,15 +4,15 @@ icon: bullseye-arrow
 
 # Start accepting on-ramp orders
 
-To join the XFlow Network as an on-ramp/off-ramp partner you will need to do 3 steps:
+To join the BRIJ Network as an on-ramp/off-ramp partner you will need to do 3 steps:
 
-1. Provide to XFlow your webhook URL.
+1. Provide to BRIJ your webhook URL.
 2. Create and configure your webhook handler to accept an on-ramp/off-ramp order.
 3. Add a line of code in your system to update the status of the order when it is completed.
 
-### Provide to XFlow your webhook URL
+### Provide to BRIJ your webhook URL
 
-You will need to create a webhook handler in your backend. This webhook will receive incoming request from XFlow when new order is created.
+You will need to create a webhook handler in your backend. This webhook will receive incoming request from BRIJ when new order is created.
 
 Once you have a created this URL, please communicate with us on telegram the URL, so we can whitelist you on the test environment.
 
@@ -23,7 +23,7 @@ Once you have a created this URL, please communicate with us on telegram the URL
 First you need to import [javascript SDK](https://github.com/espresso-cash/xflow-partner-client) by running the following command:
 
 ```
-npm install https://github.com/espresso-cash/xflow-partner-client
+npm install https://github.com/espresso-cash/brij-partner-sdk-js
 ```
 
 #### Import our SDK and edit the logic of the webhook
@@ -31,7 +31,7 @@ npm install https://github.com/espresso-cash/xflow-partner-client
 Second, you need a write a cloud function for the webhook below. You can clone the full example [here](https://github.com/espresso-cash/xflow-partner-webhook-example) or copy the main function and adapt to your need. Make sure to edit the logic in the comment section.
 
 ```javascript
-import { XFlowPartnerClient } from "xflow-partner-client";
+import { BrijPartnerClient } from "brij-partner-sdk";
 
 export async function webhookHandler(body) {
   console.log("--- Webhook Example Usage ---");
@@ -43,7 +43,7 @@ export async function webhookHandler(body) {
     const seed = "GVb2FXnG64Xpr6KbWP6Jp4hXWSkWU4uL9AgBTsdBjnZp";
 
     // Initialize partner client with your auth key pair.
-    const client = await XFlowPartnerClient.fromSeed(seed);
+    const client = await BrijPartnerClient.fromSeed(seed);
 
     const orderId = body.orderId;
     const order = await client.getOrder({ orderId: orderId });

@@ -4,7 +4,7 @@ icon: id-card
 
 # Test User App
 
-To simulate order created by a user and verify your setup, you can use [XFlow Test User App](https://espresso-cash.github.io/xflow-user-test-app/). There are 2 modes, simple and advanced.
+To simulate order created by a user and verify your setup, you can use [BRIJ Test User App](https://espresso-cash.github.io/xflow-user-test-app/#/simple). There are 2 modes, simple and advanced.
 
 ## Simple mode
 
