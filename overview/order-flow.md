@@ -4,15 +4,15 @@ icon: money-bill-transfer
 
 # Order flow
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Order flow overview</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/KYC flow - Frame 2.jpg" alt=""><figcaption><p>Order flow overview</p></figcaption></figure>
 
 1. **User** initiates onramp or offramp in **Wallet**.
-2. **Wallet** shares access to the selected **Ramp Partner** and creates order on **XFlow Server**.
-3. **XFlow Server** notifies **Ramp Partner** about new order using webhook provided by **Ramp Partner**.
+2. **Wallet** shares access to the selected **Ramp Partner** and creates order on **BRIJ Server**.
+3. **BRIJ Server** notifies **Ramp Partner** about new order using webhook provided by **Ramp Partner**.
 4. **Ramp Partner** gets order details, confirms the order, and retrieves user data using [Client SDK](../getting-started/quickstart.md).
 5. **Ramp Partner** processes the order using their internal business logic.
-6. **Ramp Partner** notifies **XFlow Server** about order completion using Client SDK.
-7. **XFlow Server** notifies **Wallet** about order completion.
+6. **Ramp Partner** notifies **BRIJ Server** about order completion using Client SDK.
+7. **BRIJ Server** notifies **Wallet** about order completion.
 
 Detailed sequence diagram of the On-Ramp Flow is provided here:
 
