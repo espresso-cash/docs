@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction to BRIJ API and SDK](README.md)
+* [Intro to BRIJ API and SDK](README.md)
 
 ## Overview
 
