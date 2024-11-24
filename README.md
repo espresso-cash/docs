@@ -13,12 +13,14 @@ layout:
     visible: true
 ---
 
-# Welcome
+# Introduction to BRIJ API and SDK
 
-Here is the documentation to integrate the BRIJ, an API and an SDK for wallet and on-ramp/off-ramp partner to:
+BRIJ provides an API and SDK designed for seamless integration between wallets and on-ramp/off-ramp partners. With BRIJ, you can:
 
-* Share user KYC datas between Wallets and On-ramp Partners
-* Buy or Sell Crypto from Fiat between Wallets and On-ramp Partners
+* **Share user KYC data** between wallets and on-ramp partners securely and efficiently.
+* **Enable crypto-to-fiat and fiat-to-crypto transactions** directly between wallets and on-ramp partners.
+
+BRIJ simplifies the process of compliance and transaction handling, ensuring a streamlined and user-friendly experience for all parties involved.
 
 <figure><img src=".gitbook/assets/KYC flow - Frame 3.jpg" alt=""><figcaption><p>System overview</p></figcaption></figure>
 
