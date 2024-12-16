@@ -28,7 +28,7 @@ npm install https://github.com/espresso-cash/brij-partner-sdk-js
 
 #### Import our SDK and edit the logic of the webhook
 
-Second, you need a write a cloud function for the webhook below. You can clone the full example [here](https://github.com/espresso-cash/xflow-partner-webhook-example) or copy the main function and adapt to your need. Make sure to edit the logic in the comment section.
+Second, you need a write a cloud function for the webhook below. You can clone the full example [here](https://github.com/espresso-cash/brij-partner-webhook-example/) or copy the main function and adapt to your need. Make sure to edit the logic in the comment section.
 
 ```javascript
 import { BrijPartnerClient } from "brij-partner-sdk";
