@@ -10,7 +10,7 @@
 ## FOR ON-RAMP PARTNER
 
 * [Start accepting on-ramp orders](getting-started/quickstart.md)
-* [Test User App](for-on-ramp-partner/test-user-app.md)
+* [Test User App](for-ramp-partner/test-user-app.md)
 
 ## FOR WALLET
 
