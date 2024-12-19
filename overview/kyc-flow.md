@@ -18,22 +18,22 @@ Before user can create orders on the platform, they need to pass KYC.
 8. For other data, **Verifier** can use one of the **KYC Partners** (e.g. SmileID). **Verifier** uploads data to **KYC Partner** and requests verification.
 9. **KYC Partner** returns verification response to **Verifier**.
 10. **Verifier** uploads verification result and verification response from **KYC Partner** to **BRIJ Server**.
-11. **XFlow Server** returns encrypted verification result to **Wallet**. KYC is completed.
+11. **BRIJ Server** returns encrypted verification result to **Wallet**. KYC is completed.
 
 Detailed sequence diagram of the KYC Flow is provided here:
 
 ```mermaid
 sequenceDiagram
     autonumber
-    
+
     actor User
     participant Wallet
-    participant KYC as XFlow Server
+    participant KYC as BRIJ Server
     participant Verifier
     participant Partner as KYC Partner
-    
+
     User->>+Wallet: Initiates KYC
-    
+
     Note over User,Verifier: Email validation
     User->>Wallet: Enters email
     Wallet->>KYC: Sends encrypted email
@@ -64,7 +64,7 @@ sequenceDiagram
     Note over User,Partner: Document validation
     User->>Wallet: Enters document info, selfie image, personal data
     Wallet->>KYC: Sends encrypted data
-    
+
     Wallet->>+Verifier: Requests document validation
     Verifier->>+KYC: Requests data
     KYC->>-Verifier: Returns encrypted data
@@ -73,7 +73,6 @@ sequenceDiagram
     Verifier->>KYC: Sends encrypted validation result
     Wallet->>+KYC: Requests validation status
     KYC->>-Wallet: Returns encrypted validation status
-    
+
     Wallet->>-User: KYC completed
 ```
-

@@ -22,29 +22,29 @@ sequenceDiagram
 
     actor User
     participant Wallet
-    participant KYC as XFlow Server
+    participant KYC as BRIJ Server
     participant Partner as Ramp Partner
-    
+
     User->>+Wallet: Initiates on-ramp
-    
+
     Wallet->>KYC: Grants access to partner
     Wallet->>KYC: Creates order
-    
+
     KYC->>Partner: Notifies about order
     Partner->>+KYC: Requests user and order information
     KYC->>-Partner: Returns information
-    
+
     alt Partner accepts order
         Partner->>KYC: Accepts order
-        
+
         Wallet->>+KYC: Requests order status
         KYC->>-Wallet: Returns order status
-        
+
         User->>Partner: Sends fiat
-        
+
         alt Fiat/crypto amount is correct
             Partner->>Wallet: Sends crypto
-            
+
             Partner->>KYC: Completes order
         else
             Partner->>KYC: Fails order
@@ -55,7 +55,7 @@ sequenceDiagram
 
     Wallet->>+KYC: Requests order status
     KYC->>-Wallet: Returns order status
-    
+
     Wallet->>-User: Ramp completed
 ```
 
@@ -67,28 +67,28 @@ sequenceDiagram
 
     actor User
     participant Wallet
-    participant KYC as XFlow Server
+    participant KYC as BRIJ Server
     participant Partner as Ramp Partner
-    
+
     User->>+Wallet: Initiates off-ramp
-    
+
     Wallet->>KYC: Grants access to partner
     Wallet->>KYC: Creates order
-    
+
     KYC->>Partner: Notifies about order
     Partner->>+KYC: Requests user and order information
     KYC->>-Partner: Returns information
-    
+
     alt Partner accepts order
         Partner->>KYC: Accepts order
-        
+
         Wallet->>+KYC: Requests order status
         KYC->>-Wallet: Returns order status
-        
+
         Wallet->>Partner: Sends crypto
-        
+
         alt Fiat/crypto amount is correct
-            Partner->>User: Sends fiat            
+            Partner->>User: Sends fiat
             Partner->>KYC: Completes order
         else
             Partner->>KYC: Fails order
@@ -99,7 +99,6 @@ sequenceDiagram
 
     Wallet->>+KYC: Requests order status
     KYC->>-Wallet: Returns order status
-    
+
     Wallet->>-User: Ramp completed
 ```
-
