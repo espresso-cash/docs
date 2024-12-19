@@ -2,7 +2,7 @@
 icon: bullseye-arrow
 ---
 
-# Start accepting on-ramp orders
+# Start accepting orders
 
 To join the BRIJ Network as an on-ramp/off-ramp partner you will need to do 3 steps:
 
@@ -20,7 +20,7 @@ Once you have a created this URL, please communicate with us on telegram the URL
 
 #### Install Client SDK
 
-First you need to import [javascript SDK](https://github.com/espresso-cash/xflow-partner-client) by running the following command:
+First you need to import [javascript SDK](https://github.com/espresso-cash/brij-partner-sdk-js) by running the following command:
 
 ```
 npm install https://github.com/espresso-cash/brij-partner-sdk-js
@@ -62,68 +62,53 @@ export async function webhookHandler(body) {
     console.log(userData);
     // Example response:
     // {
-    //   email: [
-    //     {
-    //       value: 'test@example.com',
-    //       dataId: '78415b43-181f-48e4-afbe-a14399f8452f',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
-    //   phone: [
-    //     {
-    //       value: '1234567890',
-    //       dataId: 'b0dbd7ac-c7e4-4c32-bd73-58ed6e8e46a1',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
-    //   name: [
-    //     {
-    //       firstName: 'Test',
-    //       lastName: 'Example',
-    //       dataId: 'e8537e3e-1e76-46a4-a85c-9570bbc1765f',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
-    //   birthDate: [
-    //     {
-    //       value: 2024-09-30T22:00:00.000Z,
-    //       dataId: '433bb537-77e6-4d6d-ac1e-e93427ed43e9',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
-    //   document: [
-    //     {
-    //       type: 'DOCUMENT_TYPE_VOTER_ID',
-    //       number: '0000000000000000004',
-    //       countryCode: 'NG',
-    //       dataId: '1b271dc9-4f37-43a1-ad88-bdffb4c0ec29',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
-    //   bankInfo: [
-    //     {
-    //       bankName: '',
-    //       accountNumber: '',
-    //       bankCode: '',
-    //       dataId: '3c4e5802-e2ed-4d94-8341-9a5b1f326cf8',
-    //       status: 'UNSPECIFIED'
-    //     }
-    //   ],
-    //   selfie: [
-    //     {
-    //       value: [Uint8Array],
-    //       dataId: '3ec6ce13-fc45-47e1-9eba-d94ef0b86017',
-    //       status: 'APPROVED'
-    //     }
-    //   ],
+    //   email: {
+    //     value: 'test@example.com',
+    //     dataId: '78415b43-181f-48e4-afbe-a14399f8452f',
+    //     status: 'APPROVED'
+    //   },
+    //   phone: {
+    //     value: '1234567890',
+    //     dataId: 'b0dbd7ac-c7e4-4c32-bd73-58ed6e8e46a1',
+    //     status: 'APPROVED'
+    //   },
+    //   name: {
+    //     firstName: 'Test',
+    //     lastName: 'Example',
+    //     dataId: 'e8537e3e-1e76-46a4-a85c-9570bbc1765f',
+    //     status: 'APPROVED'
+    //   },
+    //   birthDate: {
+    //     value: 2024-09-30T22:00:00.000Z,
+    //     dataId: '433bb537-77e6-4d6d-ac1e-e93427ed43e9',
+    //     status: 'APPROVED'
+    //   },
+    //   document: {
+    //     type: 'DOCUMENT_TYPE_VOTER_ID',
+    //     number: '0000000000000000004',
+    //     countryCode: 'NG',
+    //     dataId: '1b271dc9-4f37-43a1-ad88-bdffb4c0ec29',
+    //     status: 'APPROVED'
+    //   },
+    //   bankInfo: {
+    //     bankName: '',
+    //     accountNumber: '',
+    //     bankCode: '',
+    //     dataId: '3c4e5802-e2ed-4d94-8341-9a5b1f326cf8',
+    //     status: 'UNSPECIFIED'
+    //   },
+    //   selfie: {
+    //     value: [Uint8Array],
+    //     dataId: '3ec6ce13-fc45-47e1-9eba-d94ef0b86017',
+    //     status: 'APPROVED'
+    //   },
     //   custom: {
     //     kycSmileId: '{...}'
     //   }
     // }
 
-    const {
-      cryptoAmount, cryptoCurrency, fiatAmount, fiatCurrency, type,
-    } = order;
+    const { cryptoAmount, cryptoCurrency, fiatAmount, fiatCurrency, type } =
+      order;
     console.log({
       cryptoAmount,
       cryptoCurrency,
@@ -154,7 +139,8 @@ export async function webhookHandler(body) {
       canProcessOrder = true;
       if (!canProcessOrder) {
         await client.rejectOrder({
-          orderId, reason: "Unable to process order",
+          orderId,
+          reason: "Unable to process order",
         });
         console.log("Order rejected: Unable to process order");
         return;
@@ -170,6 +156,7 @@ export async function webhookHandler(body) {
         bankAccount: "Your Bank Account2",
         // ID that you can use to identify the order in your own system
         externalId: Math.random().toString(),
+        userSecretKey: secretKey,
       });
       console.log("On-Ramp order accepted successfully");
     } else if (type === "OFF_RAMP") {
@@ -180,7 +167,8 @@ export async function webhookHandler(body) {
       canProcessOrder = true;
       if (!canProcessOrder) {
         await client.rejectOrder({
-          orderId, reason: "Unable to process order",
+          orderId,
+          reason: "Unable to process order",
         });
         console.log("Order rejected: Unable to process order");
         return;
@@ -210,14 +198,14 @@ Once your webhook is up and running you can test that it is working properly by 
 
 ### Update the status of the order
 
-Once the order has been accepted and processed, you should be able to tell XFlow that money has been sent.
+Once the order has been accepted and processed, you should be able to tell BRIJ that money has been sent.
 
 For on-ramp:
 
 ```javascript
 await client.completeOnRampOrder({
-    externalId: 'YOUR_ORDER_ID',
-    transactionId: 'TRANSACTION_ID',
+  externalId: "YOUR_ORDER_ID",
+  transactionId: "TRANSACTION_ID",
 });
 ```
 
@@ -225,6 +213,6 @@ For off-ramp:
 
 ```javascript
 await client.completeOffRampOrder({
-    externalId: 'YOUR_ORDER_ID',
+  externalId: "YOUR_ORDER_ID",
 });
 ```
