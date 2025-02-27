@@ -14,7 +14,7 @@ In [simple mode](https://espresso-cash.github.io/xflow-user-test-app/#/simple), 
 
 Enter your public key into `Partner public key` field, set crypto and fiat amount, currencies, and select order type (on-ramp or off-ramp). You can optionally check `has a verified email` and `has a verified phone number` fields, so that the user will have the corresponding data verified by a test validator.
 
-After filling the fields, press `Create Order` button and if everything is set up correctly according to [quickstart.md](../getting-started/quickstart.md "mention"), you will receive a webhook event with data about the new order.
+After filling the fields, press `Create Order` button and if everything is set up correctly according to [quickstart.md](quickstart.md "mention"), you will receive a webhook event with data about the new order.
 
 The order will also be displayed on the right side of the page:
 

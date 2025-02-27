@@ -9,7 +9,7 @@ icon: money-bill-transfer
 1. **User** initiates onramp or offramp in **Wallet**.
 2. **Wallet** shares access to the selected **Ramp Partner** and creates order on **BRIJ Server**.
 3. **BRIJ Server** notifies **Ramp Partner** about new order using webhook provided by **Ramp Partner**.
-4. **Ramp Partner** gets order details, confirms the order, and retrieves user data using [Client SDK](../getting-started/quickstart.md).
+4. **Ramp Partner** gets order details, confirms the order, and retrieves user data using [Client SDK](../for-on-ramp-off-ramp-partner/quickstart.md).
 5. **Ramp Partner** processes the order using their internal business logic.
 6. **Ramp Partner** notifies **BRIJ Server** about order completion using Client SDK.
 7. **BRIJ Server** notifies **Wallet** about order completion.

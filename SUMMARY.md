@@ -7,10 +7,10 @@
 * [KYC Flow](overview/kyc-flow.md)
 * [Order flow](overview/order-flow.md)
 
-## FOR ON-RAMP PARTNER
+## FOR ON-RAMP/OFF-RAMP PARTNER
 
-* [Start accepting on-ramp orders](getting-started/quickstart.md)
-* [Test User App](for-ramp-partner/test-user-app.md)
+* [Start accepting orders](for-on-ramp-off-ramp-partner/quickstart.md)
+* [Test User App](for-on-ramp-off-ramp-partner/test-user-app.md)
 
 ## FOR WALLET/DAPP
 
