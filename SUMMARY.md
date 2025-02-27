@@ -12,6 +12,6 @@
 * [Start accepting on-ramp orders](getting-started/quickstart.md)
 * [Test User App](for-ramp-partner/test-user-app.md)
 
-## FOR WALLET
+## FOR WALLET/DAPP
 
 * [Getting started](basics/editor.md)
