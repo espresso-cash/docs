@@ -28,7 +28,7 @@ Participants:
 
 - **User** – owner of a crypto wallet who wants to perform on-ramp or off-ramp.
 - **Wallet** – non-custodial wallet connected to BRIJ network for on/off-ramp with wire transfer. Connected wallets:
-  - [Espresso Cash](https://espressocash.com) (work in progress)
+  - [Espresso Cash](https://espressocash.com)
 - **Dapp** - decentralized application connected to BRIJ network for on/off-ramp with wire transfer.
 - **BRIJ Server** – provides storage for users to store encrypted data (e.g. ID documents) and verification info; implements API to create and track on/off-ramp orders.
 - **Verifier** – service in charge of verifying information provided by users, e.g. user with wallet `4sUAXgMvL91B4BSYfficvXjDko85gCmbTcN8QH2SSGxf` owns email `john.doe@example.com`.
